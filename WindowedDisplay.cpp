@@ -76,6 +76,17 @@ void WindowedDisplay::drawGame(sf::RenderWindow *window)
 					rectangle.setFillColor(tetris->board->board[x][y].getColor());
 				}
 				window->draw(rectangle);
+
+			sf::Text text;
+			text.setFont(font);
+			text.setPosition(0, 0);
+			std::stringstream sstm;
+			sstm << "Score: ";
+			sstm << tetris->actualScore;
+			text.setString(sstm.str());
+			text.setCharacterSize(15);
+			text.setFillColor(sf::Color::White);
+			window->draw(text);
 			}
 		}
 	}
